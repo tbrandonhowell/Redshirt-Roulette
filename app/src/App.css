@@ -31,3 +31,20 @@
     transform: rotate(360deg);
   }
 }
+
+/* full size background CSS, courtesy https://css-tricks.com/perfect-full-page-background-image/ */
+/* background image swiped from a generic backgrounds website, not sure who to credit */
+html { 
+  background: url(/images/background.jpg) no-repeat top center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #ffffff;
+}
+
+#logo {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
