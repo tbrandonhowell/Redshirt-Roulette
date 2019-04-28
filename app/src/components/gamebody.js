@@ -12,7 +12,7 @@ function Gamebody (props) {
                 alt="Redshirt" 
                 width="100" 
                 id={item[0]} 
-                className="guess" 
+                className={props.spinStatus} 
                 onClick={() => props.catchAnswer(item[0])}
               />
             ))
