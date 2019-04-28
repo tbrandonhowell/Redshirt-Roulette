@@ -4,10 +4,6 @@ import shuffle from './Shuffle'; // shuffle function from https://stackoverflow.
 import picArray from './Array'; // our array of image names and IDs
 import Header from "./components/header";
 import Gamebody from "./components/gamebody";
-// import 'materialize-css/dist/css/materialize.min.css'
-// import M from "materialize-css";
-
-// TODO: need logic for winning / losing the game
 
 console.log("picArray:");
 console.log(picArray);
