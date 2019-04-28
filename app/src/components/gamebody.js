@@ -3,7 +3,9 @@ import React from "react"
 function Gamebody (props) {
 
     return (
-        <div id="gameBody"> 
+        <div id="gameBody" className="row"> 
+            <div className="col s1"></div>
+            <div className="col s10">
           {
             props.imageArray.map(item => (
               <img 
@@ -17,6 +19,8 @@ function Gamebody (props) {
               />
             ))
           }
+            </div>
+            <div className="col s1"></div>
         </div>
     )
 }

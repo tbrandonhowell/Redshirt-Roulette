@@ -27,7 +27,8 @@ class App extends Component {
     currentScore: 0,
     topScore: 0,
     scoreStyle: "",
-    spinStatus: "guess"
+    spinStatus: "guess",
+    message: "Click on a Redshirt to earn points, but don't click on any Redshirt more than once!"
   }
 
   componentDidMount() {
@@ -52,7 +53,8 @@ class App extends Component {
         currentScore: tempCurrentScore,
         topScore: tempTopScore,
         scoreStyle: "correct",
-        spinStatus: "guess"
+        spinStatus: "guess",
+        message: "Click on a Redshirt to earn points, but don't click on any Redshirt more than once!"
       },function(){
         console.log("this.state.answersArray:");
         console.log(this.state.answersArray);
@@ -69,7 +71,8 @@ class App extends Component {
         answersArray: tempAnswersArray,
         currentScore: 0,
         scoreStyle: "incorrect",
-        spinStatus: "guess-wrong"
+        spinStatus: "guess-wrong",
+        message: "You clicked the same Redshirt twice! Try Again."
       },function(){
         console.log("this.state.answersArray:");
         console.log(this.state.answersArray);
@@ -93,7 +96,7 @@ class App extends Component {
           yourScore={this.state.scoreStyle}
         />
         <div id="second-header">
-          <h5>Click on a Redshirt to earn points, but don't click on any Redshirt more than once!</h5>
+          <h5>{this.state.message}</h5>
         </div>
         <Gamebody
           imageArray = {this.state.imageArray}

@@ -61,7 +61,7 @@ html {
 
 .guess {
   border: 2px solid #ffffff !important;
-  width: 250px;
+  width: 200px;
   margin: 20px;
   border-radius: 2px;
   box-shadow: 0 0 12px #ffffff;
@@ -85,7 +85,7 @@ html {
 
 .guess-wrong {
   border: 2px solid #ffffff !important;
-  width: 250px;
+  width: 200px;
   margin: 20px;
   border-radius: 2px;
   box-shadow: 0 0 12px #ffffff;
