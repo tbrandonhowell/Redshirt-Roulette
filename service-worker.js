@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
 
 importScripts(
-  "/Redshirt-Roulette/precache-manifest.320e9daabfad1a65b80082af8c66553e.js"
+  "/Redshirt-Roulette/precache-manifest.87add86e8bf56d247b7fb523d4f528ee.js"
 );
 
 self.addEventListener('message', (event) => {

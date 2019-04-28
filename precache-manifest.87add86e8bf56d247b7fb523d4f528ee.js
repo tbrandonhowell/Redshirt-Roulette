@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "88fcbd1f1bbfda566ccb4986d59935c9",
+    "revision": "2b35480a48f7c8314027accba29ec352",
     "url": "/Redshirt-Roulette/index.html"
   },
   {
