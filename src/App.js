@@ -44,7 +44,9 @@ class App extends Component {
         tempCurrentScore = this.state.currentScore + 1;
       }
       let tempTopScore;
-      if ( (this.state.currentScore + 1) > this.state.topScore ) {
+      if (this.state.currentScore === 12) {
+        tempTopScore = 12
+      } else if ( (this.state.currentScore + 1) > this.state.topScore ) {
         tempTopScore = this.state.currentScore + 1
       } else {
         tempTopScore = this.state.topScore
