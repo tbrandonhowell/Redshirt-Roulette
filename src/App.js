@@ -37,30 +37,54 @@ class App extends Component {
     if (this.state.answersArray.indexOf(id) === -1) {
       console.log("correct answer");
       tempAnswersArray.push(id);
-      let tempCurrentScore = this.state.currentScore + 1;
+      let tempCurrentScore;
+      if (this.state.currentScore === 12) {
+        tempCurrentScore = 1;
+      } else {
+        tempCurrentScore = this.state.currentScore + 1;
+      }
       let tempTopScore;
       if ( (this.state.currentScore + 1) > this.state.topScore ) {
         tempTopScore = this.state.currentScore + 1
       } else {
         tempTopScore = this.state.topScore
       }
-      this.setState({
-        answersArray: tempAnswersArray,
-        currentScore: tempCurrentScore,
-        topScore: tempTopScore,
-        scoreStyle: "correct",
-        spinStatus: "guess",
-        message: "Click on a Redshirt to earn points, but don't click on any Redshirt more than once!"
-      },function(){
-        console.log("this.state.answersArray:");
-        console.log(this.state.answersArray);
-        setTimeout( () => {
-          this.setState({
-            scoreStyle: ""
-          })
-        },200)
-      });
-    } else {
+      if (tempCurrentScore === 12) { // you've won:
+        this.setState({
+          answersArray: [],
+          currentScore: 12,
+          topScore: tempTopScore,
+          scoreStyle: "correct",
+          spinStatus: "guess-win",
+          message: "Congratuations, you won! Click any Redshirt to start again."
+        },function(){
+          console.log("this.state.answersArray:");
+          console.log(this.state.answersArray);
+          setTimeout( () => {
+            this.setState({
+              scoreStyle: ""
+            })
+          },200)
+        });
+      } else { // correct answer, but haven't won yet:
+        this.setState({
+          answersArray: tempAnswersArray,
+          currentScore: tempCurrentScore,
+          topScore: tempTopScore,
+          scoreStyle: "correct",
+          spinStatus: "guess",
+          message: "Click on a Redshirt to earn points, but don't click on any Redshirt more than once!"
+        },function(){
+          console.log("this.state.answersArray:");
+          console.log(this.state.answersArray);
+          setTimeout( () => {
+            this.setState({
+              scoreStyle: ""
+            })
+          },200)
+        });
+      }
+    } else { // incorrect answer
       console.log("incorrect answer");
       tempAnswersArray = [];
       this.setState({

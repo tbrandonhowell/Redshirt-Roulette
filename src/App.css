@@ -68,7 +68,7 @@ html {
   transition: transform .2s; /* Animation */
 }
 
-@keyframes wrongSpin {
+@keyframes winSpin {
   0%   { -webkit-transform: rotate(0deg) scale(1); }
   10%  { -webkit-transform: rotate(90deg) scale(.75); }
   20%  { -webkit-transform: rotate(180deg) scale(.50); }
@@ -80,7 +80,20 @@ html {
   80%  { -webkit-transform: rotate(180deg) scale(.50); }
   90%  { -webkit-transform: rotate(90deg) scale(.75); }
   100%  { -webkit-transform: rotate(0deg) scale(1); }
-  
+}
+
+@keyframes wrongShake {
+  0% { transform: translate(1px, 1px) rotate(0deg) scale(1); }
+  10% { transform: translate(-1px, -2px) rotate(-10deg) scale(1.25); }
+  20% { transform: translate(-3px, 0px) rotate(10deg) scale(1.5); }
+  30% { transform: translate(3px, 2px) rotate(0deg) scale(1.75); }
+  40% { transform: translate(1px, -1px) rotate(10deg) scale(1.75); }
+  50% { transform: translate(-1px, 2px) rotate(-10deg) scale(1.75); }
+  60% { transform: translate(-3px, 1px) rotate(0deg) scale(1.75); }
+  70% { transform: translate(3px, 1px) rotate(-10deg) scale(1.75); }
+  80% { transform: translate(-1px, -1px) rotate(10deg) scale(1.5); }
+  90% { transform: translate(1px, 2px) rotate(0deg) scale(1.25); }
+  100% { transform: translate(1px, -2px) rotate(-10deg) scale(1); }
 }
 
 .guess-wrong {
@@ -90,13 +103,26 @@ html {
   border-radius: 2px;
   box-shadow: 0 0 12px #ffffff;
   transition: transform .2s; /* Animation */
-  -webkit-animation: wrongSpin 0.75s; /* Safari 4+ */
-  -moz-animation:    wrongSpin 0.75s; /* Fx 5+ */
-  -o-animation:      wrongSpin 0.75s; /* Opera 12+ */
-  animation:         wrongSpin 0.75s; /* IE 10+, Fx 29+ */
+  -webkit-animation: wrongShake 0.5s; /* Safari 4+ */
+  -moz-animation:    wrongShake 0.5s; /* Fx 5+ */
+  -o-animation:      wrongShake 0.5s; /* Opera 12+ */
+  animation:         wrongShake 0.5s; /* IE 10+, Fx 29+ */
 }
 
-.guess:hover .guess-wring:hover {
+.guess-win {
+  border: 2px solid #00ff15 !important;
+  width: 200px;
+  margin: 20px;
+  border-radius: 2px;
+  box-shadow: 0 0 12px #ffffff;
+  transition: transform .2s; /* Animation */
+  -webkit-animation: winSpin 0.75s; /* Safari 4+ */
+  -moz-animation:    winSpin 0.75s; /* Fx 5+ */
+  -o-animation:      winSpin 0.75s; /* Opera 12+ */
+  animation:         winSpin 0.75s; /* IE 10+, Fx 29+ */
+}
+
+.guess:hover .guess-wrong:hover .guess-win:hover {
   transform: scale(1.1);
 }
 
